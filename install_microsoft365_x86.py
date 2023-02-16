@@ -11,7 +11,7 @@ try:
 	main_file = open(main_file_name, "r")
 	main_file.close()
 except FileNotFoundError:
-	print("Couldn\'t download or install Microsoft 365 because the configuration file is missing!")
+	print("Couldn\'t download or install Microsoft 365 because the configuration file or setup.exe is missing!")
 	exit()
 print("Downloading Microsoft 365")
 os.system(".\\"+main_file_name+" /download "+config_file_name)

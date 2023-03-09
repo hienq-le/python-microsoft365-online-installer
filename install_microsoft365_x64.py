@@ -16,6 +16,10 @@ except FileNotFoundError:
 print("Downloading Microsoft 365")
 os.system(".\\"+main_file_name+" /download "+config_file_name)
 print("Downloaded Microsoft 365 successfully")
-print("Installing Microsoft 365")
-os.system(".\\"+main_file_name+" /configure "+config_file_name)
-print("Installed Microsoft 365 successfully")
+# Check if system is Windows 8.1+, 64-bit, non-ARM
+if platform.system() == 'Windows' and platform.architecture() == '64bit' and sys.getwindowsversion().build >= 9600:
+	print("Installing Microsoft 365")
+	os.system(".\\"+main_file_name+" /configure "+config_file_name)
+	print("Installed Microsoft 365 successfully")
+else:
+	print("Couldn\'t install Microsoft 365 because your system doesn\'t meet minimum system requirements, or system isn\'t Windows!")

@@ -2,7 +2,7 @@
 Microsoft 365 Apps 64-bit Online Installer Written in Python and XML
 The setup.exe is updated every 1 day after the 2nd Tuesday of a month, UTC+7
 """
-import os
+import os, platform, sys
 config_file_name = "configuration_microsoft365_x64.xml"
 main_file_name = "setup.exe"
 try:

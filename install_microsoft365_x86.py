@@ -16,8 +16,8 @@ except FileNotFoundError:
 print("Downloading Microsoft 365")
 os.system(".\\"+main_file_name+" /download "+config_file_name)
 print("Downloaded Microsoft 365 successfully")
-# Check if system is Windows 8.1 or Windows 10, 32-bit
-if platform.system() == 'Windows' and platform.architecture()[0] == '32bit' and sys.getwindowsversion().build >= 9600 and sys.getwindowsversion().build < 22000:
+# Check if system is Windows 10, 32-bit
+if platform.system() == 'Windows' and platform.architecture()[0] == '32bit' and sys.getwindowsversion().build >= 10240 and sys.getwindowsversion().build < 22000:
 	print("Installing Microsoft 365")
 	os.system(".\\"+main_file_name+" /configure "+config_file_name)
 	print("Installed Microsoft 365 successfully")
